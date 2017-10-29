@@ -11,6 +11,26 @@
 
 </head>
 <body>
+<h1> Crystal Collector! </h1>
+<br>
+<h2> <p>instructions:</p></h2>
+
+<div id="scorebox">
+	<h1> Number to Guess: <span id="number-to-guess"></span></h1>
+</div>
+
+<div id="wins-losses-box">
+</div>
+
+<div id="gem-holder">
+
+</div>
+
+<div id="user-score">
+
+</div>
+
+
 <div id="crystals">
 
 <img class="crystal-image" src="http://vignette3.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="crystal1">
@@ -27,9 +47,32 @@
 
 <script type="text/javascript">
 
+var targetNumber = 50;
+
+$("#number-to-guess").text(targetNumber);	
+
+var counter = 0;
+
+var numberOptions = [10,11];
+var increment = numberOptions[Math.round(Math.random())];
+
+
 $(".crystal-image").on("click", function() {
-	alert("You clicked a crystal");
+
+	counter += increment;
+
+	alert("New score: " + counter);
+
+	if (counter === targetNumber) {
+		alert("You win!");
+	}
+
+	else if (counter >= targetNumber) {
+		alert("You lose!!");
+	}
+
 });	
+
 
 
 
