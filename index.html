@@ -2,81 +2,83 @@
 <html>
 <head>
 	<title>Crystal Collector</title>
-	<style type="text/css">
-	.crystal-image {
-		width: 200px;
-		height: 200px;
-	}
-</style>
-
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="assets/javascript/game.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 </head>
+
 <body>
-<h1> Crystal Collector! </h1>
+<div class="container">
+
+<section class="row">
+	<div class="col-lg-4">	
+	<h1> Crystal Collector! </h1>
+</section>
+
 <br>
-<h2> <p>instructions:</p></h2>
 
-<div id="scorebox">
-	<h1> Number to Guess: <span id="number-to-guess"></span></h1>
-</div>
+<section class="row">
+	<section class="col-lg-6">
 
-<div id="wins-losses-box">
-</div>
+	<h1>instructions:</h1>
+		<p> You will be give a random number at the start of the game</p>
+		<p> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+		<p> You. win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.</p>
+		<p> The value of each crystal is hidden from you until you click on it.</p>
+		<p> Each time when the game starts, the game will change the value of each crystal.</p>
+	</section>
+</section>	
 
-<div id="gem-holder">
+<section class="row">
+	<section class="col-lg-6">
+	<h1 id="numberToGuess"> Number to Guess: </h1>
+	</section>
+	
+	<section class="col-lg-6">
+	<div id="wins-losses-box">
+	</div>
+	</section>
+</section>
+<div class="crystals">
+	<section class="row">
+		<section class="col-lg-3">	
+				<button id="crystal-1" class="btn btn1"><img class="crystal-image" src="http://vignette3.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="crystal1"></button>
+		</section>		
+		<section class="col-lg-3">
+				<button id="crystal-2" class="btn btn2"><img class="crystal-image" src="https://2.bp.blogspot.com/-1T7mZsFIb_0/WId8BcKn8yI/AAAAAAAAnWE/wIEoDQs9ZqwzwgQZzT93MZrxOrSR2qb0QCLcB/s1600/crystal_skill.png" alt="crystal2"></button>
+		</section>
+		<section class="col-lg-3">
+				<button id="crystal-3" class="btn btn3"><img class="crystal-image" src="http://mbch.guide/wp-content/uploads/crystal_daily.png" alt="crystal3"></button>
+		</section>
 
-</div>
+		<section class="col-lg-3">
+
+				<button id="crystal-4" class="btn btn4"><img class="crystal-image" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/b/ba/Crystal_mystic.png/revision/latest?cb=20151122000019" alt="crystal4"></button>
+		</section>
+	</section>
+</div>	
+
 
 <div id="user-score">
+	<section class="row">
+		<section class="col-lg-6">
+			<h1 id="userTotal"> Your total score is:</h1>
+		</section>
+	</section>	
 
 </div>
 
 
-<div id="crystals">
 
-<img class="crystal-image" src="http://vignette3.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="crystal1">
-
-<img class="crystal-image" src="https://2.bp.blogspot.com/-1T7mZsFIb_0/WId8BcKn8yI/AAAAAAAAnWE/wIEoDQs9ZqwzwgQZzT93MZrxOrSR2qb0QCLcB/s1600/crystal_skill.png" alt="crystal2">
-
-<img class="crystal-image" src="http://mbch.guide/wp-content/uploads/crystal_daily.png" alt="crystal3">
-
-<img class="crystal-image" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/b/ba/Crystal_mystic.png/revision/latest?cb=20151122000019" alt="crystal4">
 </div>
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
-
-<script type="text/javascript">
-
-var targetNumber = 50;
-
-$("#number-to-guess").text(targetNumber);	
-
-var counter = 0;
-
-var numberOptions = [10,11];
-var increment = numberOptions[Math.round(Math.random())];
-
-
-$(".crystal-image").on("click", function() {
-
-	counter += increment;
-
-	alert("New score: " + counter);
-
-	if (counter === targetNumber) {
-		alert("You win!");
-	}
-
-	else if (counter >= targetNumber) {
-		alert("You lose!!");
-	}
-
-});	
 
 
 
 
-
-</script>
 </body>
-</html>
+</html>`

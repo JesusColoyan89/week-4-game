@@ -1,0 +1,29 @@
+.crystal-image {
+		width: 200px;
+		height: 200px;
+		background-color: rgba(29, 0 , 0 ,.5)
+	}
+
+
+body {
+	background-image: url("https://s3.envato.com/files/161464875/Crystal%20Background%20preview%20image.jpg");
+}
+h1 {
+	color: red;
+	background-color: pink;
+	opacity: 0.75;
+}
+
+p {
+	background-color: pink;
+	opacity: 0.75;
+}
+
+
+
+button {
+	height: 200px;
+	width: 200px;
+	background-color: rgba(29, 0, 0, .5)
+
+}
